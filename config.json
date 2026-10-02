@@ -1,0 +1,115 @@
+{
+  "_comment": "Jio Gemini Scanner v12 WAVE EDITION \u2014 Config",
+  "wave": {
+    "wave_timeout_seconds": 15,
+    "wave_batch_size": 0,
+    "wave_otp_workers": 80,
+    "panel_exhaust_waves": 3,
+    "wave_runners": 3
+  },
+  "threads": {
+    "panel_scan_workers": 20,
+    "scanner_workers": 40,
+    "inbox_workers": 50,
+    "otp_workers": 0,
+    "sse_reconnect_workers": 2,
+    "dorker_workers": 6,
+    "claim_workers": 12,
+    "wave_otp_workers": 0,
+    "wave_runners": 0
+  },
+  "timeouts": {
+    "otp_timeout_seconds": 60,
+    "verification_timeout_seconds": 10,
+    "firebase_request_timeout": 3.5,
+    "jio_api_timeout": 5.0,
+    "panel_ping_timeout": 3.0,
+    "message_scan_limit": 10,
+    "sse_read_timeout": 90
+  },
+  "retry": {
+    "jio_api_max_retries": 3,
+    "proxy_rotate_on_retry": true,
+    "retry_pool_max_attempts": 3,
+    "retry_pool_delay_seconds": 5
+  },
+  "intervals": {
+    "otp_poll_interval": 2.0,
+    "proxy_refresh_interval_seconds": 86400,
+    "dead_panel_ttl_seconds": 86400,
+    "sse_reconnect_backoff_cap": 60
+  },
+  "scoring": {
+    "enabled": true,
+    "hit_weight": 0.4,
+    "claim_weight": 10.0,
+    "latency_weight": 0.2,
+    "min_score_to_prioritize": 1.0
+  },
+  "proxy": {
+    "auto_refresh_free_proxies": false,
+    "free_proxy_sources": [],
+    "paid_proxies_file": "proxies.txt.REDACTED-SEE-NOTES"
+  },
+  "output": {
+    "links_file": "gemini_activation_links.txt",
+    "results_csv": "gemini_results.csv",
+    "live_phones_file": "live_phones.txt",
+    "dead_panels_file": "dead_panels.txt",
+    "panel_scores_file": "panel_scores.json",
+    "write_to_desktop": true
+  },
+  "features": {
+    "rich_dashboard": true,
+    "otp_dedup_lock": true,
+    "panel_scoring": true,
+    "persistent_sse": true,
+    "international_numbers": false,
+    "auto_revive_dead_panels": false
+  },
+  "recycler": {
+    "enabled": true,
+    "top_n_panels": 15,
+    "interval_seconds": 300,
+    "rescan_with_full_clients": false
+  },
+  "dorker": {
+    "batch_size": 50,
+    "dorker_batch_size": 10,
+    "workers": 2,
+    "continuous_mode": false,
+    "github_scanning": false,
+    "crtsh_scanning": false,
+    "learned_patterns": false,
+    "loop_sleep_seconds": 15
+  },
+  "international": {
+    "enabled": false,
+    "country_codes": [
+      "+1",
+      "+965",
+      "+880",
+      "+92",
+      "+977",
+      "+94",
+      "+62",
+      "+234",
+      "+254",
+      "+60",
+      "+66",
+      "+84"
+    ],
+    "use_for_otp_intercept": false,
+    "use_for_jio_claim": false
+  },
+  "daemon": {
+    "max_consecutive_crashes": 5,
+    "crash_pause_seconds": 60,
+    "restart_delay_seconds": 5,
+    "run_beast_engine": false,
+    "run_batch_scanner": false,
+    "run_stream_scanner": false,
+    "run_dorker": false
+  },
+  "_DISCLOSURE_NOTICE": "Operational tuning from the reporter's local run. Values shown are defaults/observed, NOT validated against any live system. Included as evidence of intended scale only. Must not be used against production systems."
+}

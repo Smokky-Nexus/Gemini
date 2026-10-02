@@ -1,0 +1,3 @@
+# REDACTED FOR DISCLOSURE — contains no harvested data.
+# Original held live operational output; deliberately excluded.
+# See ../NOTES-REDACTION.md for what was removed and why.
